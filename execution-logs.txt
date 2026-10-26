@@ -1,0 +1,26 @@
+TASK 3: Terraform Docker Provisioning
+====================================
+
+
+Commands I Used:
+1. terraform --version
+2. docker --version
+3. docker ps
+4. terraform init
+5. terraform plan
+6. terraform apply
+7. terraform state list
+8. docker ps
+9. terraform destroy
+
+Apply Result:
+Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+
+Container Name: terraform-nginx-container
+Docker Image: nginx:latest
+Port Mapping: 8081:80
+
+Verification:
+Open http://localhost:8081 in a browser to check the Nginx welcome page.
+
+
