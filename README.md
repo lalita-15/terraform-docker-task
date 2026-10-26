@@ -28,7 +28,7 @@ This project demonstrates how to provision a Docker container using Terraform. T
 
 
 
-&#x20;    Architecture
+\## Workflow
 
 
 
@@ -36,55 +36,19 @@ This project demonstrates how to provision a Docker container using Terraform. T
 
 flowchart TD
 
-&#x20;   A\["main.tf<br/>Terraform Configuration"]
+&#x20;   A\[main.tf] --> B\[terraform init]
 
-&#x20;   B\["terraform init"]
+&#x20;   B --> C\[terraform plan]
 
-&#x20;   C\["terraform plan"]
+&#x20;   C --> D\[terraform apply]
 
-&#x20;   D\["terraform apply"]
+&#x20;   D --> E\[Docker Container Created]
 
-&#x20;   E\["Docker Provider"]
+&#x20;   E --> F\[Verify Nginx on localhost:8081]
 
-&#x20;   F\["Nginx Image"]
+&#x20;   F --> G\[terraform state list]
 
-&#x20;   G\["Docker Container<br/>terraform-nginx"]
-
-&#x20;   H\["localhost:8081"]
-
-&#x20;   I\["Nginx Welcome Page"]
-
-
-
-&#x20;   A --> B --> C --> D --> E
-
-&#x20;   E --> F --> G --> H --> I
-
-
-
-&#x20;   J\["terraform state list"] -.-> G
-
-&#x20;   K\["terraform destroy"] -.-> G
-
-
-
-&#x20;   classDef config fill:#dbeafe,stroke:#2563eb,color:#111827
-
-&#x20;   classDef process fill:#f3f4f6,stroke:#6b7280,color:#111827
-
-&#x20;   classDef resource fill:#dcfce7,stroke:#16a34a,color:#111827
-
-&#x20;   classDef verify fill:#fef3c7,stroke:#d97706,color:#111827
-
-
-
-&#x20;   class A config
-
-&#x20;   class B,C,D,E process
-
-&#x20;   class F,G resource
-
-&#x20;   class H,I verify
+&#x20;   G --> H\[terraform destroy]
 
 ```
 
