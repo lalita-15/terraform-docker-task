@@ -28,51 +28,47 @@ This project demonstrates how to provision a Docker container using Terraform. T
 
 
 
-Architecture
+\## Architecture
 
 
 
-&#x20;       Terraform Configuration
+```mermaid
 
-&#x20;              main.tf
+flowchart TD
 
-&#x20;                 |
+&#x20;   A\["main.tf<br/>Terraform Configuration"] --> B\["terraform init"]
 
-&#x20;                 v
+&#x20;   B --> C\["terraform plan"]
 
-&#x20;          Terraform CLI
+&#x20;   C --> D\["terraform apply"]
 
-&#x20;                 |
+&#x20;   D --> E\["Docker Provider"]
 
-&#x20;         +-------+-------+
+&#x20;   E --> F\["Nginx Image<br/>nginx:latest"]
 
-&#x20;         |               |
+&#x20;   F --> G\["Docker Container<br/>terraform-nginx"]
 
-&#x20;         v               v
+&#x20;   G --> H\["Port Mapping<br/>localhost:8081 → 80"]
 
-&#x20;    Docker Image    Docker Container
-
-&#x20;     nginx:latest   terraform-nginx-container
-
-&#x20;                         |
-
-&#x20;                         v
-
-&#x20;                 Host Port: 8081
-
-&#x20;                         |
-
-&#x20;                         v
-
-&#x20;                  Container Port: 80
-
-&#x20;                         |
-
-&#x20;                         v
-
-&#x20;                   Nginx Web Page
+&#x20;   H --> I\["Nginx Welcome Page"]
 
 
+
+&#x20;   J\["terraform state list"] -.-> G
+
+&#x20;   K\["terraform destroy"] -.-> G
+
+
+
+&#x20;   style A fill:#e8eaf6,stroke:#3949ab,color:#111
+
+&#x20;   style D fill:#e8f5e9,stroke:#2e7d32,color:#111
+
+&#x20;   style G fill:#e3f2fd,stroke:#1565c0,color:#111
+
+&#x20;   style I fill:#fff3e0,stroke:#ef6c00,color:#111
+
+```
 
 Main Files
 
