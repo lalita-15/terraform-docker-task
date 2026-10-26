@@ -1,18 +1,18 @@
-Infrastructure as Code (IaC) with Terraform
+## &#x20;   Infrastructure as Code (IaC) with Terraform
 
 
 
-Internship Task 3 | Terraform + Docker
+## &#x20;      *Internship Task 3 | Terraform + Docker*
 
 
 
-Objective
+### \## **Objective**
 
 To create and manage a local Docker container using Terraform.
 
 
 
-Tools I Used
+#### Tools I Used
 
 \- Terraform
 
@@ -22,13 +22,13 @@ Tools I Used
 
 
 
-Task Description
+#### Task Description
 
 This project demonstrates how to provision a Docker container using Terraform. Terraform downloads the Nginx image and creates a container with port mapping.
 
 
 
-\## Workflow
+#### &#x20;Workflow
 
 
 
@@ -52,7 +52,7 @@ flowchart TD
 
 ```
 
-Main Files
+#### Main Files
 
 \- main.tf – Terraform configuration to create the Docker image and container.
 
@@ -62,9 +62,9 @@ Main Files
 
 
 
-Steps I followed to Perform Task:-
+#### Steps I followed to Perform Task:-
 
-
+#### 
 
 1\. Installed Terraform and verified Docker.
 
@@ -83,7 +83,7 @@ Steps I followed to Perform Task:-
 
 
 
-Expected Output:
+##### Expected Output:
 
 A Docker container named terraform-nginx-container runs Nginx and exposes it on port 8080 of the local machine.
 
@@ -91,13 +91,13 @@ Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
 
 
 
-Verify Container
+##### Verify Container
 
 &#x20;docker ps
 
 
 
-\## Cleanup
+#### &#x20;Cleanup
 
 Run the following command to remove the Terraform-managed resources:
 
@@ -109,7 +109,7 @@ terraform destroy
 
 
 
-Author
+##### Author
 
 Lalita Rajpoot
 
